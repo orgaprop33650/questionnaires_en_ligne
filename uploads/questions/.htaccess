@@ -1,0 +1,18 @@
+# Only serve image files
+<FilesMatch "\.(?i:jpe?g|png|gif|webp)$">
+    Require all granted
+</FilesMatch>
+
+# Deny everything else
+<FilesMatch "^(?!.*\.(?i:jpe?g|png|gif|webp)$)">
+    Require all denied
+</FilesMatch>
+
+# Disable PHP execution
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+# Disable script execution
+Options -ExecCGI
+AddHandler cgi-script .php .pl .py .jsp .asp .sh .cgi

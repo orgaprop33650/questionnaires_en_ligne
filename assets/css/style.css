@@ -1,0 +1,83 @@
+/* Questionnaires en ligne — Custom styles */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* QR code centrage */
+#qrcode {
+    display: inline-block;
+}
+#qrcode img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Chrono warning animation */
+.chrono-warning {
+    animation: pulse 0.5s ease-in-out infinite alternate;
+}
+@keyframes pulse {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+/* Choix boutons stagiaire */
+.choix-btn {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.choix-btn:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.choix-btn.btn-primary {
+    transform: scale(1.02);
+    box-shadow: 0 2px 12px rgba(13,110,253,0.3);
+}
+
+/* Progress bars animées */
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+/* Cards dashboard hover */
+.card.shadow-sm {
+    transition: box-shadow 0.2s ease;
+}
+.card.shadow-sm:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.12) !important;
+}
+
+/* Handle drag */
+.handle {
+    cursor: grab;
+    opacity: 0.5;
+}
+.handle:hover {
+    opacity: 1;
+}
+
+/* Code input styling */
+input[style*="letter-spacing"] {
+    font-family: 'Courier New', monospace;
+}
+
+/* Responsive fixes mobile */
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    .card-body {
+        padding: 1rem;
+    }
+    .choix-btn {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+}
